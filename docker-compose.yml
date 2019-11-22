@@ -5,4 +5,4 @@ services:
         ports:
           - "9000:80"
         volumes:
-          - ./html:/usr/share/nginx/html
+          - ./tracklist:/usr/share/nginx/html
