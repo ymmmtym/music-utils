@@ -1,4 +1,4 @@
 FROM nginx:alpine
 COPY ["./tracklist", "/usr/share/nginx/html"]
-COPY ["./8080.conf", "/etc/nginx/conf.d/"]
-EXPOSE 80
+COPY ["./default.conf", "/etc/nginx/conf.d/"]
+EXPOSE 8080
