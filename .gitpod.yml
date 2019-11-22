@@ -3,10 +3,5 @@ image:
 
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/43_config_ports/
 ports:
-- port: 8080
+- port: 9000
   onOpen: open-browser
-
-tasks: 
-- name: nginx
-  command: >
-    nginx

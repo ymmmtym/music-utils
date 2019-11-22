@@ -1,8 +1,8 @@
 version: '3'
 services:
     nginx:
-        image: ./Dockerfile
+        build: .
         ports:
-          - "8080:8080"
+            - "9000:9000"
         volumes:
-          - ./tracklist:/usr/share/nginx/html
+            - ./tracklist:/usr/share/nginx/html
