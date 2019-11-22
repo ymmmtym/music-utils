@@ -5,3 +5,8 @@ image:
 ports:
 - port: 8080
   onOpen: open-browser
+
+tasks: 
+- name: nginx
+  command: >
+    nginx
