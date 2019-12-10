@@ -1,8 +1,0 @@
-version: '3'
-services:
-    nginx:
-        image: ./Dockerfile
-        ports:
-            - "9000:9000"
-        volumes:
-            - ./tracklist:/usr/share/nginx/html
