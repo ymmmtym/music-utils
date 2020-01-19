@@ -1,17 +1,14 @@
-name: CI
-
-on: [push]
-
+name: Create index page for github pages
+on:
+  push:
+    branches:
+      - master
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: ls tracklist
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: Install required module
+      run: pip install jinja2
+    - name: Run python script
+      run: python scripts/create_index.py > index.html
