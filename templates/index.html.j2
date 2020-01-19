@@ -15,6 +15,7 @@
   <h2>{{ genre }}</h2>
   {% for item in data[genre] %}
   <p><a href={{ item.url }}>{{ item.name }}</a></p>
+  {{ item.table }}
   {% endfor %}
   {% endfor %}
 </body>

@@ -1,0 +1,25 @@
+name: Create index page for github pages
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Install required module
+      run: pip3 install jinja2 BeautifulSoup4 lxml
+
+    - name: Run python script
+      run: python3 scripts/create_index.py > index.html
+    
+    - name: Create pull request
+      uses: peter-evans/create-pull-request@v2.1.2
+      with:
+        token: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
+        title: Create index from tracklists
+        branch: create-index
