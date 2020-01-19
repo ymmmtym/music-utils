@@ -1,0 +1,9 @@
+version: '3'
+services:
+    music-container:
+        build: .
+        container_name: music-container
+        hostname: music-container
+        tty: true
+        volumes:
+            - .:/root/music-utils

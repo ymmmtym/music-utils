@@ -4,6 +4,8 @@ This repository contains music utils for personal use.
 https://ymmmtym.github.io/music-utils/
 
 ## Requirements
+- docker >= 19.03.5
+- docker-compose >= 1.24.1
 
 ## Usage
 
@@ -25,5 +27,9 @@ mv ${tracklist} ./tracklists/
 ### Convert filename to songtitle for audio files (e.g. mp3)
 
 ```
-./scripts/convert_filename_to_songtitle_for_mp3.sh ${input dir} ${output dir}
+mkdir input output
+
+# Input your mp3 files to input dir
+
+docker-compose exec music-container "./scripts/convert_filename2songtitle.sh ./input ./output"
 ```
