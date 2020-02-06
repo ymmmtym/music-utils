@@ -1,6 +1,6 @@
 FROM python:3.7-alpine
 LABEL Maintainer "ymmmtym"
-ENV HOSTNAME="music-container" \
+ENV HOSTNAME="music-utils" \
     APP_PATH="/root/misic-utils" \
     PS1="[\u@\h \W]# "
 

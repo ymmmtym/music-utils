@@ -1,9 +1,9 @@
 version: '3'
 services:
-    music-container:
-        build: .
-        container_name: music-container
-        hostname: music-container
+    music-utils:
+        image: yumemo/music-utils
+        container_name: music-utils
+        hostname: music-utils
         tty: true
         volumes:
             - .:/root/music-utils
