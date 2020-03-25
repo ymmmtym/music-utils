@@ -1,6 +1,7 @@
 version: '3'
 services:
     music-utils:
+        build: .
         image: yumemo/music-utils
         container_name: music-utils
         hostname: music-utils
