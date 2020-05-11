@@ -1,6 +1,6 @@
 name: Create index page for github pages
 on:
-  push:
+  pull-request:
     branches:
       - master
 

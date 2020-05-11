@@ -7,4 +7,4 @@ services:
         hostname: music-utils
         tty: true
         volumes:
-            - .:/root/music-utils
+            - .:/opt/music-utils
