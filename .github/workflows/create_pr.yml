@@ -11,6 +11,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Set branch var
+      id: branch
+      run: echo "::set-output name=branch::${GITHUB_REF:11}"
+
     - name: Install required module
       run: pip3 install jinja2 BeautifulSoup4 lxml
 
@@ -21,5 +25,5 @@ jobs:
       uses: peter-evans/create-pull-request@v2.4.4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        title: Create PR from ${{ GITHUB_REF::11 }}
-        branch: ci/${{ GITHUB_REF::11 }}
+        title: Create PR from ${{ steps.branch.outputs.branch }}
+        branch: ci/${{ steps.branch.outputs.branch }}
