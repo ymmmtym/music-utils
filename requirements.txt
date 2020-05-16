@@ -1,6 +1,14 @@
 beautifulsoup4==4.8.2
+certifi==2020.4.5.1
+chardet==3.0.4
+discogs-client==2.2.2
+idna==2.9
 Jinja2==2.10.3
 lxml==4.4.2
 MarkupSafe==1.1.1
 mutagen==1.43.0
+oauthlib==3.1.0
+requests==2.23.0
+six==1.14.0
 soupsieve==1.9.5
+urllib3==1.25.9
