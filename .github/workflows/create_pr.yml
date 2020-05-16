@@ -20,6 +20,6 @@ jobs:
     - name: Create pull request
       uses: peter-evans/create-pull-request@v2.4.4
       with:
-        token: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
-        title: Create PR from ${{ github.ref }}
-        branch: ci/${{ github.ref }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: Create PR from ${{ GITHUB_REF::11 }}
+        branch: ci/${{ GITHUB_REF::11 }}
