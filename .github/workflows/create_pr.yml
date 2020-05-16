@@ -5,11 +5,15 @@ on:
       - master
 
 jobs:
-  build:
+  pr:
     runs-on: ubuntu-18.04
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
+
+    - name: Set branch var
+      id: branch
+      run: echo "::set-output name=branch::${GITHUB_REF:11}"
 
     - name: Install required module
       run: pip3 install jinja2 BeautifulSoup4 lxml
@@ -18,8 +22,8 @@ jobs:
       run: python3 scripts/create_index.py > index.html
 
     - name: Create pull request
-      uses: peter-evans/create-pull-request@v2.1.2
+      uses: peter-evans/create-pull-request@v2.4.4
       with:
-        token: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
-        title: Create index from tracklists
-        branch: create-index
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: Create PR from ${{ steps.branch.outputs.branch }}
+        branch: ci/${{ steps.branch.outputs.branch }}
