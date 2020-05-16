@@ -29,7 +29,7 @@ mv ${tracklist} ./tracklists/
 ```
 mkdir input output
 
-# Input your mp3 files to input dir
+# Move album dir including mp3 files to input dir
 
-docker-compose exec music-container "./scripts/convert_filename2songtitle.sh ./input ./output"
+bash ./scripts/convert_filename2songtitle.sh ./input ./output
 ```

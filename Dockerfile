@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-LABEL Maintainer "ymmmtym"
+LABEL Maintainer="ymmmtym"
 ENV HOSTNAME="music-utils" \
     APP="/opt/misic-utils" \
     PS1="[\u@\h \W]# "
