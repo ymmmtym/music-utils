@@ -20,6 +20,6 @@ jobs:
     - name: Create pull request
       uses: peter-evans/create-pull-request@v2.1.2
       with:
-        token: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
-        title: Create index from tracklists
-        branch: create-index
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: Create PR from ${{ github.ref }}
+        branch: ci/${{ github.ref }}
