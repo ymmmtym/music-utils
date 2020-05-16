@@ -1,7 +1,7 @@
 name: Create index page for github pages
 on:
-  pull-request:
-    branches:
+  push:
+    branches-ignore:
       - master
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
 
     - name: Run python script
       run: python3 scripts/create_index.py > index.html
-    
+
     - name: Create pull request
       uses: peter-evans/create-pull-request@v2.1.2
       with:
