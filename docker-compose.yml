@@ -1,8 +1,10 @@
 version: '3'
 services:
     music-utils:
-        build: .
-        image: yumemo/music-utils
+        build:
+          context: .
+          dockerfile: Dockerfile
+        image: ymmmtym/music-utils
         container_name: music-utils
         hostname: music-utils
         tty: true
