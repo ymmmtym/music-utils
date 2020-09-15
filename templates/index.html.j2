@@ -13,13 +13,20 @@
   <h1>Spotify</h1>
   <iframe src="https://open.spotify.com/embed/artist/20xAtS9rocibFnYmKQibm9" width="600" height="760" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   <h1>Track Lists</h1>
-  {% for genre in data %}
-  <h2>{{ genre }}</h2>
-  {% for item in data[genre] %}
-  <p><a href={{ item.url }}>{{ item.name }}</a></p>
-  {{ item.table }}
-  {% endfor %}
-  {% endfor %}
+    {% for genre in data %}
+    <h2>{{ genre }}</h2>
+      <h3>Track Lists of {{ genre }}</h3>
+        <ul>
+        {% for item in data[genre] %}
+          <li><a href={{ item.url }}>{{ item.name }}</a></li>
+        {% endfor %}
+        </ul>
+      <h3>Detail</h3>
+      {% for item in data[genre] %}
+        <p><a href={{ item.url }}>{{ item.name }}</a></p>
+      {{ item.table }}
+      {% endfor %}
+    {% endfor %}
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
