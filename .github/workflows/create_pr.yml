@@ -21,11 +21,10 @@ jobs:
     - name: Run python script
       run: python3 scripts/create_index.py > index.html
 
-    - name: Create pull request to master
+    - name: Create pull request
       uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        base: master
         title: Create PR from ${{ steps.branch.outputs.branch }}
         branch: ci/${{ steps.branch.outputs.branch }}
         delete-branch: true
