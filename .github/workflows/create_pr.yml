@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  pr:
+  create-pull-request:
     runs-on: ubuntu-18.04
 
     steps:
@@ -21,9 +21,11 @@ jobs:
     - name: Run python script
       run: python3 scripts/create_index.py > index.html
 
-    - name: Create pull request
+    - name: Create pull request to master
       uses: peter-evans/create-pull-request@v2.4.4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+        base: master
         title: Create PR from ${{ steps.branch.outputs.branch }}
         branch: ci/${{ steps.branch.outputs.branch }}
+        delete-branch: true
