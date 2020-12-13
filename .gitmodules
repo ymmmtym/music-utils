@@ -1,0 +1,3 @@
+[submodule "discogs-python-api"]
+	path = discogs-python-api
+	url = git@github.com:ymmmtym/discogs-python-api.git
