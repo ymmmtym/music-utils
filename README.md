@@ -1,7 +1,7 @@
 # music-utils
 This repository contains music utils for personal use.
 
-https://ymmmtym.github.io/music-utils/
+https://ymmmtym.com/music-utils/
 
 ## Requirements
 - docker >= 19.03.5
@@ -11,7 +11,7 @@ https://ymmmtym.github.io/music-utils/
 
 ### Update index.html
 
-work on master branch
+work on branch without main
 
 #### 1. add tracklist exported Traktor
 
@@ -21,8 +21,9 @@ mv ${tracklist} ./tracklists/
 # ex) mv mix-techno01.html ./tracklists/
 ```
 
-#### 2. Push master branch
-#### 3. Create index.html by Github Actions
+#### 2. Push branch
+#### 3. Create PR with index.html by Github Actions
+#### 4. Merge
 
 ### Convert filename to songtitle for audio files (e.g. mp3)
 
