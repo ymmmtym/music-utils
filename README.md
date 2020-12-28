@@ -5,11 +5,11 @@ This repository contains music utils for personal use.
 ```txt
 feature/       *-*
               /   \
-main         *---------*--
+main         *-----*---*--
               \       /
 tracklist/     *-----*
                 \   /
-ci/tracklist     *-*
+ci/tracklist/    *-*
 ```
 
 <https://ymmmtym.com/music-utils/>
@@ -23,21 +23,35 @@ ci/tracklist     *-*
 
 ### Update index.html
 
-work on branch without main
-
-#### 1. add tracklist exported Traktor
+Work on tracklist branch.  
+Add tracklist exported from Traktor.
 
 ```bash
+git checkout -b tracklist/${branch}
 mv ${tracklist} ./tracklists/
+git push origin tracklist/${branch}
 
-# ex) mv mix-techno01.html ./tracklists/
+# ex)
+# git checkout -b tracklist/techno01
+# mv mix-techno01.html ./tracklists/
+# git push origin tracklist/techno01
 ```
 
-#### 2. Push branch
+Checkout ci branch created by Github Actions.  
+Merge to tracklist branch.
 
-#### 3. Create PR with index.html by Github Actions
+```bash
+hub ci-status
+# success
 
-#### 4. Merge
+gh pr checkout ${num}
+gh pr checks
+gh pr merge
+```
+
+Merge tracklist branch to main.
+
+### 3. Merge tracklist branch
 
 ### Convert filename to songtitle for audio files (e.g. mp3)
 
