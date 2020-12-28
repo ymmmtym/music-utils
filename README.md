@@ -44,14 +44,16 @@ Merge to tracklist branch.
 hub ci-status
 # success
 
-gh pr checkout ${num}
-gh pr checks
+git checkout -b ci/tracklist/${branch} origin/ci/tracklist/${branch}
 gh pr merge
 ```
 
 Merge tracklist branch to main.
 
-### 3. Merge tracklist branch
+```bash
+git checkout tracklist/${branch}
+gh pr merge
+```
 
 ### Convert filename to songtitle for audio files (e.g. mp3)
 
