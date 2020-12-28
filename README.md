@@ -52,6 +52,7 @@ Merge tracklist branch to main.
 
 ```bash
 git checkout tracklist/${branch}
+gh pr create
 gh pr merge
 ```
 
