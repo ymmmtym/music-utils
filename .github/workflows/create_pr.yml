@@ -27,4 +27,5 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: Create PR from ${{ steps.branch.outputs.branch }}
         branch: ci/${{ steps.branch.outputs.branch }}
+        base: main
         delete-branch: true
